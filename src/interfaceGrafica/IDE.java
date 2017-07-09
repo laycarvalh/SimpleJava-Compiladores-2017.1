@@ -194,7 +194,7 @@ public class IDE extends javax.swing.JFrame {
 //        }
 
         textSaidaErro.setText("");
-        textSaidaErro.setBackground(Color.green);
+        textSaidaErro.setBackground(Color.yellow);
         showTree = true;
         ANTLRInputStream antlrInput = new ANTLRInputStream(textEditor.getText());
         GramaticaSimpleJavaLexer lexer = new GramaticaSimpleJavaLexer(antlrInput);
@@ -232,7 +232,7 @@ public class IDE extends javax.swing.JFrame {
                 SyntaxError e = errorCollector.getErrors().get(i);
                 highlighter = textEditor.getHighlighter();
                 // RecognitionExceptionUtil is my custom class discussed next.
-                System.out.println("######################");
+//                System.out.println("######################");
                 /*textEditor =  underlineError(e.getRecognizer(),
                  e.getOffendingToken(), e.getLine(),
                  e.getCharPositionInLine(), textEditor);*/
@@ -246,7 +246,7 @@ public class IDE extends javax.swing.JFrame {
                     highlighter.addHighlight(start, stop, painter);
                 } catch (BadLocationException e1) {
                     // TODO Auto-generated catch block
-                    System.out.println("######################BADDDDD");
+//                    System.out.println("######################BADDDDD");
                     e1.printStackTrace();
                 }
                 textSaidaErro.append("Erro " + (i + 1) + ": Linha " + e.getLine() + " : " + e.getMessage() + "\n");
@@ -264,6 +264,7 @@ public class IDE extends javax.swing.JFrame {
             //scrollPaneE.setViewportView(textError);
 
         }else{
+            textSaidaErro.setBackground(Color.green);
             textSaidaErro.append("Sucesso na Compilação\n");
         }
         

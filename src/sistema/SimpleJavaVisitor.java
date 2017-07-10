@@ -17,11 +17,11 @@ public class SimpleJavaVisitor extends GramaticaSimpleJavaBaseVisitor<AST>{
         String prog = "prog";
         noProg = new AST(prog);
         
-        AST nomeClasse = new AST(ctx.ID().getText());
-        nomeClasse.setLinha(ctx.ID().getSymbol().getLine());
+        AST nomeProg = new AST(ctx.ID().getText());
+        nomeProg.setLinha(ctx.ID().getSymbol().getLine());
         
         
-        noProg.adicionaFilho(nomeClasse);
+        noProg.adicionaFilho(nomeProg);
         
         noProg.setLinha(ctx.getStart().getLine());
         

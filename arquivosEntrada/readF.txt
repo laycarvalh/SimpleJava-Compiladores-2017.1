@@ -1,0 +1,303 @@
+.method public static scan()F
+
+   .limit stack 10  ; up to five items can be pushed
+   .limit locals 100
+	
+	; __________________________________________________
+	
+	; inicializa flag que redireciona o fluxo para incluir os valores decimais
+	
+	ldc 0
+	
+	istore 48 ; flag loop decimal
+	
+	; __________________________________________________
+	
+	; inicializa valor que gera decimais
+	
+	ldc 10.0
+	
+	fstore 49
+	
+	; __________________________________________________
+	
+	; inicializa flag que indica se o número é negativo
+	
+	ldc 0
+	
+	; posicao que armazena zero para variável positiva e 1 para variável negativa
+	
+	istore 50
+	
+	; __________________________________________________
+   
+	; Inicializa o acumulador
+   
+	; carrega a constante zero na pilha
+   
+    ldc 0.0
+	
+	; inteiro para o resultado armazenado no endereço 52 (Acumulador)
+	
+	fstore 52
+	
+	; __________________________________________________
+ Loop:
+	
+	; __________________________________________________
+	
+	; Inicia Leitura
+	
+	; faz a leitura de um caractere
+	
+    getstatic java/lang/System/in Ljava/io/InputStream; ; chama classe de entrada do usuário
+    invokevirtual java/io/InputStream/read()I ; entrada de um inteiro pelo usuário
+	
+	; armazena o caractere lido nas variáveis locais
+    istore 51 ; valor entrado pelo usuário armazenado no endereço 1
+
+	; imprime o caractere lido
+	
+	; __________________________________________________
+
+	; Inicia comparações de quebra de ciclo
+	
+	; Comparação com retorno de carro
+	
+	; carrega o valor lido
+	
+    iload 51
+	
+	; código ascii para retorno de carro em windows
+	
+    ldc 13
+	
+	; subtrai o valor digitado pelo valor de parada deixando o valor da subtração na pilha
+	
+    isub 
+
+	; se o valor de subtraçao for zero ifeq pula para o Loop, para ler o caractere de nova linha antes de sair da leitura
+	
+    ifeq Loop
+	
+	; __________________________________________________
+   
+    ; verifica se o caractere lido é uma nova linha
+	
+	; carrega o valor lido
+	
+    iload 51
+	
+	; carrega o código ascii da nova linha
+	
+    ldc 10
+	
+	; subtrai esses dois valores
+	
+    isub
+	
+	; se a subtração for zero, termina o loop
+	
+    ifeq TerminarLoop ; se o valor de subtraçao for zero ifeq salta para TerminarLoop
+	
+	; __________________________________________________
+	
+	; verifica se o valor lido é um espaço em branco
+		
+	; carrega o valor lido
+	
+	iload 51
+	
+	; carrega o código ascii do espaço em branco
+		
+    ldc 32
+	
+	; faz a subtração entre o valor lido e o código ascii do espaço em branco
+	
+    isub
+	
+	; testa o resultado
+	
+	ifeq TerminarLoop
+	
+	; __________________________________________________
+	
+	; verifica se o valor lido é um sinal negativo
+	
+	; carrega o valor lido
+	
+	iload 51
+	
+	; carrega o código ascii do sinal negativo
+		
+    ldc 45
+	
+	; faz a subtração entre o valor lido e o código ascii do espaço em branco
+	
+    isub
+
+	; testa o resultado
+	
+	ifeq MudaSinal
+	
+	; __________________________________________________
+	
+	; verifica se o valor lido é um ponto
+	
+	; carrega o valor lido
+	
+	iload 51
+	
+	; carrega o código ascii do sinal negativo
+		
+    ldc 46
+	
+	; faz a subtração entre o valor lido e o código ascii do espaço em branco
+	
+    isub
+
+	; testa o resultado
+	
+	ifeq MudaFlagDecimal
+	
+	; __________________________________________________
+	
+	; Caso o valor lido seja um número
+	
+	; carrega o valor lido
+	
+	; verifica flag decimal
+	
+	iload 48
+	
+	ldc 1
+	
+	isub
+	
+	ifeq SomarDecimais
+	
+	iload 51
+	
+	; carrega o código ascii para o valor zero
+	
+    ldc 48
+	
+	; subtrai os dois valores, ao final dessa subtração o valor inteiro do caractere estará na memória
+	
+    isub
+	
+	; carrega a constante 10 para a memória, será usada para multiplicar o valor do acumulador
+	
+	i2f
+	
+    ldc 10.0
+	
+	; carrega o valor do acumulador
+	
+    fload 52
+	
+	; multiplica o valor acumulado por 10
+	
+    fmul
+	
+	; soma o valor acumulado multiplicado por 10, pelo valor lido recentemente
+	
+    fadd
+	
+	; salva o resultado no acumulador
+	
+    fstore 52
+	
+	; reinicia o loop
+	
+    goto Loop
+  
+  ; __________________________________________________
+  
+	MudaSinal:
+	
+	ldc 1
+	
+	istore 50
+	
+	goto Loop
+	
+	; __________________________________________________
+	
+	MudaFlagDecimal:
+	
+	ldc 1
+	
+	istore 48
+	
+	goto Loop
+	
+	; __________________________________________________
+	
+	SomarDecimais:
+	
+	iload 51
+	
+	ldc 48
+	
+	isub
+	
+	i2f
+	
+	fload 49
+	
+	fdiv
+	
+	fload 52
+	
+	fadd
+	
+	fstore 52
+	
+	fload 49
+	
+	ldc 10.0
+	
+	fmul
+	
+	fstore 49
+	
+	goto Loop
+	
+	; __________________________________________________
+	
+	TerminarLoop:
+	
+	; __________________________________________________
+	
+	; verifica se o número é negativo
+	
+	iload 50
+	
+	ifeq RetornoPositivo
+	
+	; carrega o valor zero para a pilha
+	
+	ldc 0.0
+	
+	; carrega o valor do acumulador
+	
+    fload 52
+	
+	fsub
+	
+	goto Retorno
+	
+	; __________________________________________________
+	
+	RetornoPositivo:
+	
+	; carrega o valor do acumulador para a pilha
+	
+    fload 52
+	
+	Retorno:
+	
+    freturn
+	
+.end method

@@ -120,7 +120,7 @@ public class ASTJung {
         
         vv.setPreferredSize(new Dimension(500,500)); //Sets the viewing area size
         
-        //Label do v�rtice
+        //Label do vertice
         Transformer<AST,String> vertex = new Transformer<AST,String>() {
 
             @Override
@@ -131,7 +131,7 @@ public class ASTJung {
             
         };
         
-        //Cor do v�rtice
+        //Cor do vertice
         
         Transformer<AST,Paint> vertexColor = new Transformer<AST,Paint>() {
             public Paint transform(AST i) {
@@ -139,10 +139,10 @@ public class ASTJung {
             }
         };
         
-        //Dimens�o do v�rtice
+        //dimensao do vertice
          
         Transformer<AST,Shape> vertexSize = new Transformer<AST,Shape>(){
-        	int length_rotulo = 0; //verifica tamanho do r�tulo da AST
+        	int length_rotulo = 0; //verifica tamanho do rotulo da AST
         	public Shape transform(AST i){
             	length_rotulo = i.getRotulo().length();
             	if(length_rotulo < 8){
@@ -170,7 +170,7 @@ public class ASTJung {
 
         
         
-        JFrame frame = new JFrame("�rvore Sint�tica");
+        JFrame frame = new JFrame("arvore sintatica");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().add(vv); 
         frame.pack();

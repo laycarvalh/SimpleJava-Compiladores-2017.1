@@ -225,7 +225,12 @@ public class IDE extends javax.swing.JFrame {
         HighlightPainter painter
                 = new DefaultHighlighter.DefaultHighlightPainter(Color.pink);
         highlighter.removeAllHighlights();
-        if (errorCollector.getErrors().size() > 0) {
+        if (errorCollector.getErrors().size() == 0) {
+            textSaidaErro.setBackground(Color.green);
+//            textSaidaErro.append("Sucesso na Compilação\n");
+        }
+        else{
+            textSaidaErro.setBackground(Color.red);
             showTree = false;
 
             for (int i = 0; i < errorCollector.getErrors().size(); i++) {
@@ -233,9 +238,12 @@ public class IDE extends javax.swing.JFrame {
                 highlighter = textEditor.getHighlighter();
                 // RecognitionExceptionUtil is my custom class discussed next.
 //                System.out.println("######################");
-                /*textEditor =  underlineError(e.getRecognizer(),
+//                comentar aqui
+                textEditor =  underlineError(e.getRecognizer(),
                  e.getOffendingToken(), e.getLine(),
-                 e.getCharPositionInLine(), textEditor);*/
+                 e.getCharPositionInLine(), textEditor);
+                
+                //comentar até aqui
                 int start = e.getOffendingToken().getStartIndex();
                 int stop = e.getOffendingToken().getStopIndex() + 1;
                 String input = e.getOffendingToken().getTokenSource().getInputStream().toString();
@@ -249,12 +257,13 @@ public class IDE extends javax.swing.JFrame {
 //                    System.out.println("######################BADDDDD");
                     e1.printStackTrace();
                 }
+                
                 textSaidaErro.append("Erro " + (i + 1) + ": Linha " + e.getLine() + " : " + e.getMessage() + "\n");
 
                 //contentPane.add(textError, BorderLayout.EAST );
                 //contentPane.setBackground(Color.red);
                 //panelSaida.add(textSaidaErro, BorderLayout.SOUTH );
-                textSaidaErro.setBackground(Color.red);
+                
 
                 //.err.println("ENTROU");
                 //textEditor.setHighlighter(highlighter);
@@ -263,9 +272,6 @@ public class IDE extends javax.swing.JFrame {
             //panel.add(scrollPaneE);
             //scrollPaneE.setViewportView(textError);
 
-        }else{
-            textSaidaErro.setBackground(Color.green);
-            textSaidaErro.append("Sucesso na Compilação\n");
         }
         
 //        if (showTree) {

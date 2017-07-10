@@ -1,0 +1,37 @@
+Prog Teste123{
+
+Static Int MAX = 100;
+Int lista;
+int  i, j, opcao, i;
+
+Bool Leitura() {
+   i = (2 + 4) * 10;
+   j = -(i*2)/2;
+   While (i < MAX) {
+        Print("Item: ", i);
+        Scan(lista);
+        i= i+j;
+        Print("Deseja continuar? 1-SIM ou 0-NAO"); // este é um comentario
+ 	Scan(opcao);
+        If (opcao==ZERO) then {
+	}       
+/*Este 
+é um comentario
+de 
+multiplas 
+linhas hsuahs1r6355940292;~´a\\\\\\
+*/
+   }
+   return (TRUE);
+}
+Int Leitura(Bool flag) {
+
+}
+
+Bool Impressao() {
+
+}
+
+
+   MAX = -999; // Na analise semantica, não deve aceitar
+}

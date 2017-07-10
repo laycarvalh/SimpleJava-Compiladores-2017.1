@@ -2,7 +2,7 @@ grammar GramaticaSimpleJava;
 
 prog : 'Prog' ID '{' declaracao* funcao* principal '}'  #Body
 ;
-principal : declaracao* comandos* #Main
+principal : (declaracao|comandos)* #Main
           ;
 
 declaracao_var : tipo lista_ids ';' #Variaveis
@@ -30,9 +30,9 @@ lista_de_parametros : parametro ',' lista_de_parametros #listaParam
 parametro : tipo ID #Parameter;
 
 tipo : 'Int' #tipoInt
-     | 'Real' #tipoReal // ------------------------tipoFloat
+     | 'Real' #tipoReal 
      | 'String' #tipoString
-     | 'Bool' #tipoBool //-------------------------tipoBoolean
+     | 'Bool' #tipoBool 
      ;
 
 
@@ -41,10 +41,10 @@ lista_de_expr : expr ',' lista_de_expr #listExpression
                     |/*empyt*/ #emptyExpression;
 
 comandos : 'print' '(' lista_de_expr ')' ';' #comandoPrint
-         | 'scan' '(' lista_ids ')' ';' #comadoScan // -------------comadoRead
+         | 'scan' '(' lista_ids ')' ';' #comadoScan 
          | atribuicao #comandoAtribuicao
          | comandos_controle #comandoControle
-         | 'break' ';' #comandoBreak // ----------- comandoExit
+         | 'break' ';' #comandoBreak 
          | chamada_de_funcao #comandoChamadaFuncao
          | retorno #comandoRetorno
          ;

@@ -1,0 +1,50 @@
+class entrada1;
+
+testa(): boolean{
+	var b: int;
+}
+mostrar():string{
+}
+soma(float e):float{
+var c : float;
+var a : float;
+var b : float;
+var r : int;
+var bool : boolean;
+var nome :string;
+for(r = 0:100 step 2){
+	
+}
+read(a,b,c);
+print();
+nome = mostrar();
+c=soma(soma(1+b))+soma(e);
+bool =! (a>b);
+soma(a);
+print("f", a+b);
+b = 3.0;
+c = a+b;
+
+}
+
+main(){
+var c : float;
+var a : float;
+var b : float;
+var r : int;
+var bool : boolean;
+var nome :string;
+for(r = 0:100 step 2){
+	
+}
+read(a,b,c);
+print();
+nome = mostrar();
+c=soma(soma(1+b))+soma(e);
+bool =! (a>b);
+soma(a);
+print("f", a+b);
+b = 3.0;
+c = a+b;
+
+}

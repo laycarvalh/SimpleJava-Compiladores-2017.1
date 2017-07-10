@@ -5,20 +5,16 @@ prog : 'Prog' ID '{' declaracao* funcao* principal '}'  #Body
 principal : (declaracao|comandos)* #Main
           ;
 
-declaracao_var : tipo lista_ids ';' #Variaveis
-               ; 
-
-declaracao_const : 'Static' tipo ID '=' (INT|REAL|STRING|BOOL) ';' #Contantes; 
-
-lista_ids : ID ',' lista_ids #listaIds
-          | ID #listaIdsID
-          ;
+funcao : tipo ID '(' lista_de_parametros ')' '{' declaracao* comandos* '}' #Function
+       ;
 
 declaracao : declaracao_var #declaracaoVariaveis
            | declaracao_const #declaracaoContantes
            ; 
-funcao : tipo ID '(' lista_de_parametros ')' '{' declaracao* comandos* '}' #Function
-       ;
+lista_ids : ID ',' lista_ids #listaIds
+          | ID #listaIdsID
+          ;
+
 retorno : 'return' '(' expr ')' ';' #Return
         ;
 
@@ -65,6 +61,11 @@ comandos_controle : 'if' '(' oprelacional ')' '{' comandos* '}' (comando_else)? 
 atribuicao : ID '=' expr ';'  #Atribution
            ;
 
+declaracao_var : tipo lista_ids ';' #Variaveis
+               ; 
+
+declaracao_const : 'Static' tipo ID '=' (INT|REAL|STRING|BOOL) ';' #Contantes; 
+
 expr : parentese #exprParentese
     | opnot #exprNot
     | '-' expr #exprMinus
@@ -99,6 +100,8 @@ valor: INT #valorINT
 numero : NUM #Number;
 
 identificador : ID #Id;
+
+
 
 // some lexer rules
 STRING : '"'.*?'"';

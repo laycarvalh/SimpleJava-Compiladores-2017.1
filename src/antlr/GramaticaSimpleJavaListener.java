@@ -361,17 +361,6 @@ public interface GramaticaSimpleJavaListener extends ParseTreeListener {
 	void exitComandoControleFor(@NotNull GramaticaSimpleJavaParser.ComandoControleForContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link GramaticaSimpleJavaParser#listaIdsID}.
-	 * @param ctx the parse tree
-	 */
-	void enterListaIdsID(@NotNull GramaticaSimpleJavaParser.ListaIdsIDContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link GramaticaSimpleJavaParser#listaIdsID}.
-	 * @param ctx the parse tree
-	 */
-	void exitListaIdsID(@NotNull GramaticaSimpleJavaParser.ListaIdsIDContext ctx);
-
-	/**
 	 * Enter a parse tree produced by {@link GramaticaSimpleJavaParser#Function}.
 	 * @param ctx the parse tree
 	 */
@@ -381,6 +370,17 @@ public interface GramaticaSimpleJavaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFunction(@NotNull GramaticaSimpleJavaParser.FunctionContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link GramaticaSimpleJavaParser#listaIdsID}.
+	 * @param ctx the parse tree
+	 */
+	void enterListaIdsID(@NotNull GramaticaSimpleJavaParser.ListaIdsIDContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GramaticaSimpleJavaParser#listaIdsID}.
+	 * @param ctx the parse tree
+	 */
+	void exitListaIdsID(@NotNull GramaticaSimpleJavaParser.ListaIdsIDContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link GramaticaSimpleJavaParser#opnotFator}.
@@ -504,17 +504,6 @@ public interface GramaticaSimpleJavaListener extends ParseTreeListener {
 	void exitStepFor(@NotNull GramaticaSimpleJavaParser.StepForContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link GramaticaSimpleJavaParser#Variaveis}.
-	 * @param ctx the parse tree
-	 */
-	void enterVariaveis(@NotNull GramaticaSimpleJavaParser.VariaveisContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link GramaticaSimpleJavaParser#Variaveis}.
-	 * @param ctx the parse tree
-	 */
-	void exitVariaveis(@NotNull GramaticaSimpleJavaParser.VariaveisContext ctx);
-
-	/**
 	 * Enter a parse tree produced by {@link GramaticaSimpleJavaParser#listaParam}.
 	 * @param ctx the parse tree
 	 */
@@ -524,6 +513,17 @@ public interface GramaticaSimpleJavaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitListaParam(@NotNull GramaticaSimpleJavaParser.ListaParamContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link GramaticaSimpleJavaParser#Variaveis}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariaveis(@NotNull GramaticaSimpleJavaParser.VariaveisContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link GramaticaSimpleJavaParser#Variaveis}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariaveis(@NotNull GramaticaSimpleJavaParser.VariaveisContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link GramaticaSimpleJavaParser#tipoBool}.

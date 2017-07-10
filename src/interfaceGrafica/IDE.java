@@ -352,13 +352,13 @@ public class IDE extends javax.swing.JFrame {
         String errorLine = lines[line - 1];
         textSaidaErro.setText(errorLine);
         for (int i = 0; i < charPositionInLine; i++) {
-            System.err.print(" ");
+//            System.err.print(" ");
         }
         int start = offendingToken.getStartIndex();
         int stop = offendingToken.getStopIndex();
         if (start >= 0 && stop >= 0) {
             for (int i = start; i <= stop; i++) {
-                System.err.print("^");
+//                System.err.print("^");
             }
         }
         Highlighter highlighter = text.getHighlighter();
@@ -373,9 +373,9 @@ public class IDE extends javax.swing.JFrame {
             e.printStackTrace();
         }
 
-        System.err.println("ENTROU");
+//        System.err.println("ENTROU");
         text.setHighlighter(highlighter);
-        text.append("uiiuiuiui");
+//        text.append("uiiuiuiui");
         return text;
 
     }

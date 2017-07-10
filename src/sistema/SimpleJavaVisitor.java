@@ -57,9 +57,12 @@ public class SimpleJavaVisitor extends GramaticaSimpleJavaBaseVisitor<AST>{
                 noFuncaoBody = null;
             }
         }
-        
-        noPrincipalBody = visit(ctx.principal());
-        noProg.adicionaFilho(noPrincipalBody);
+        try{
+            noPrincipalBody = visit(ctx.principal());
+            noProg.adicionaFilho(noPrincipalBody);
+        }catch(Exception e){
+            noProg = null;
+        }
         return noProg;
     }
     

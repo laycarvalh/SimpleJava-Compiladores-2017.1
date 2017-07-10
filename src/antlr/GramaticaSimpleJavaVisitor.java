@@ -236,18 +236,18 @@ public interface GramaticaSimpleJavaVisitor<T> extends ParseTreeVisitor<T> {
 	T visitComandoControleFor(@NotNull GramaticaSimpleJavaParser.ComandoControleForContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link GramaticaSimpleJavaParser#listaIdsID}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitListaIdsID(@NotNull GramaticaSimpleJavaParser.ListaIdsIDContext ctx);
-
-	/**
 	 * Visit a parse tree produced by {@link GramaticaSimpleJavaParser#Function}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitFunction(@NotNull GramaticaSimpleJavaParser.FunctionContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link GramaticaSimpleJavaParser#listaIdsID}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitListaIdsID(@NotNull GramaticaSimpleJavaParser.ListaIdsIDContext ctx);
 
 	/**
 	 * Visit a parse tree produced by {@link GramaticaSimpleJavaParser#opnotFator}.
@@ -327,18 +327,18 @@ public interface GramaticaSimpleJavaVisitor<T> extends ParseTreeVisitor<T> {
 	T visitStepFor(@NotNull GramaticaSimpleJavaParser.StepForContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link GramaticaSimpleJavaParser#Variaveis}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVariaveis(@NotNull GramaticaSimpleJavaParser.VariaveisContext ctx);
-
-	/**
 	 * Visit a parse tree produced by {@link GramaticaSimpleJavaParser#listaParam}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitListaParam(@NotNull GramaticaSimpleJavaParser.ListaParamContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link GramaticaSimpleJavaParser#Variaveis}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVariaveis(@NotNull GramaticaSimpleJavaParser.VariaveisContext ctx);
 
 	/**
 	 * Visit a parse tree produced by {@link GramaticaSimpleJavaParser#tipoBool}.

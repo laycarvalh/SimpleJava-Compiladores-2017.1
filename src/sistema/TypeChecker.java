@@ -119,8 +119,9 @@ public class TypeChecker {
 									   //se for entao o valor é uma variavel nao declarada
 			
 			if(tipo_declaracao.equals("string")){
+                            System.out.println("Entrou no checador de tipo");
 				if(valor.charAt(0) !='"' &&  valor.charAt(valor.length()-1)!= '"'){
-					throw new ErroVariavelNaoDelarada("Cariavel "+valor+" nao declarada", no.getLinha());
+					throw new ErroVariavelNaoDelarada("Variavel "+valor+" nao declarada", no.getLinha());
 				}
 			}else if(tipo_declaracao.equals("bool")){
 				if(valor.equals("TRUE") || valor.equals("FALSE")) return; 

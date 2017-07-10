@@ -456,7 +456,8 @@ public class Semantica extends Exception {
             AST subArvoreEsquerda, subArvoreDireita, noFilhoOperadorNot;
             if (rotuloAtual.equals("==")
                     || rotuloAtual.equals("!=")
-                    || rotuloAtual.equals("<>")
+                    || rotuloAtual.equals("&&")
+                    || rotuloAtual.equals("||")
                     || rotuloAtual.equals(">")
                     || rotuloAtual.equals(">=")
                     || rotuloAtual.equals("<")

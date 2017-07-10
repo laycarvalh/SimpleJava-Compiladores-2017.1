@@ -433,19 +433,6 @@ public class GramaticaSimpleJavaBaseListener implements GramaticaSimpleJavaListe
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterListaIdsID(@NotNull GramaticaSimpleJavaParser.ListaIdsIDContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitListaIdsID(@NotNull GramaticaSimpleJavaParser.ListaIdsIDContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterFunction(@NotNull GramaticaSimpleJavaParser.FunctionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -453,6 +440,19 @@ public class GramaticaSimpleJavaBaseListener implements GramaticaSimpleJavaListe
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitFunction(@NotNull GramaticaSimpleJavaParser.FunctionContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterListaIdsID(@NotNull GramaticaSimpleJavaParser.ListaIdsIDContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitListaIdsID(@NotNull GramaticaSimpleJavaParser.ListaIdsIDContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -602,19 +602,6 @@ public class GramaticaSimpleJavaBaseListener implements GramaticaSimpleJavaListe
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVariaveis(@NotNull GramaticaSimpleJavaParser.VariaveisContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitVariaveis(@NotNull GramaticaSimpleJavaParser.VariaveisContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterListaParam(@NotNull GramaticaSimpleJavaParser.ListaParamContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -622,6 +609,19 @@ public class GramaticaSimpleJavaBaseListener implements GramaticaSimpleJavaListe
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitListaParam(@NotNull GramaticaSimpleJavaParser.ListaParamContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVariaveis(@NotNull GramaticaSimpleJavaParser.VariaveisContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVariaveis(@NotNull GramaticaSimpleJavaParser.VariaveisContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

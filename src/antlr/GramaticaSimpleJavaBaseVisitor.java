@@ -274,7 +274,7 @@ public class GramaticaSimpleJavaBaseVisitor<T> extends AbstractParseTreeVisitor<
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitListaIdsID(@NotNull GramaticaSimpleJavaParser.ListaIdsIDContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunction(@NotNull GramaticaSimpleJavaParser.FunctionContext ctx) { return visitChildren(ctx); }
 
 	/**
 	 * {@inheritDoc}
@@ -282,7 +282,7 @@ public class GramaticaSimpleJavaBaseVisitor<T> extends AbstractParseTreeVisitor<
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunction(@NotNull GramaticaSimpleJavaParser.FunctionContext ctx) { return visitChildren(ctx); }
+	@Override public T visitListaIdsID(@NotNull GramaticaSimpleJavaParser.ListaIdsIDContext ctx) { return visitChildren(ctx); }
 
 	/**
 	 * {@inheritDoc}
@@ -378,7 +378,7 @@ public class GramaticaSimpleJavaBaseVisitor<T> extends AbstractParseTreeVisitor<
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVariaveis(@NotNull GramaticaSimpleJavaParser.VariaveisContext ctx) { return visitChildren(ctx); }
+	@Override public T visitListaParam(@NotNull GramaticaSimpleJavaParser.ListaParamContext ctx) { return visitChildren(ctx); }
 
 	/**
 	 * {@inheritDoc}
@@ -386,7 +386,7 @@ public class GramaticaSimpleJavaBaseVisitor<T> extends AbstractParseTreeVisitor<
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitListaParam(@NotNull GramaticaSimpleJavaParser.ListaParamContext ctx) { return visitChildren(ctx); }
+	@Override public T visitVariaveis(@NotNull GramaticaSimpleJavaParser.VariaveisContext ctx) { return visitChildren(ctx); }
 
 	/**
 	 * {@inheritDoc}
